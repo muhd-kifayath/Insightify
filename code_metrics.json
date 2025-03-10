@@ -1,0 +1,20 @@
+{
+    "loc": 218,
+    "comment_density": 0.009259259259259259,
+    "cyclomatic_complexity": 94,
+    "maintainability_index": 26.402309881568822,
+    "halstead": {
+        "unique_operators": 11,
+        "unique_operands": 49,
+        "total_operators": 30,
+        "total_operands": 58,
+        "volume": 519.8063724135496,
+        "effort": 3384.045567345354
+    },
+    "fan_in": 69,
+    "fan_out": 69,
+    "cbo": 74,
+    "lcom": 60.0,
+    "dit": 0,
+    "nom": 23
+}

@@ -1,0 +1,20 @@
+{
+    "Lines of Code (LOC)": 218,
+    "Comment Density": 0.01,
+    "Cyclomatic Complexity": 94,
+    "Halstead Metrics": {
+        "Unique Operators": 11,
+        "Unique Operands": 49,
+        "Total Operators": 30,
+        "Total Operands": 58,
+        "Volume": 519.81,
+        "Effort": 3384.05
+    },
+    "Maintainability Index": 26.4,
+    "Depth of Inheritance Tree (DIT)": 0,
+    "Coupling Between Objects (CBO)": 49,
+    "Lack of Cohesion in Methods (LCOM)": 60.0,
+    "Fan-In": 69,
+    "Fan-Out": 69,
+    "Number of Methods (NOM)": 23
+}

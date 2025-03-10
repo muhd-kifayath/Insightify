@@ -1,0 +1,9 @@
+{
+    "Modifiability": 0.4,
+    "Testability": 0.5,
+    "Reliability": 0.7,
+    "Understandability": 0.65,
+    "Self-Descriptiveness": 0.0,
+    "Reusability": 1.0,
+    "Portability": 1.0
+}

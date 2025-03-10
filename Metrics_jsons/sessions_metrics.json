@@ -1,0 +1,31 @@
+{
+    "static_metrics": {
+        "Lines of Code (LOC)": 233,
+        "Comment Density": 0.04017857142857143,
+        "Cyclomatic Complexity": 63,
+        "Maintainability Index": 38.621740547495676,
+        "Halstead Metrics": "",
+        "Unique Operators": 13,
+        "Unique Operands": 60,
+        "Total Operators": 42,
+        "Total Operands": 80,
+        "Volume": 755.1585961833622,
+        "Effort": 6544.707833589138,
+        "Depth of Inheritance Tree (DIT)": 0,
+        "Coupling Between Object classes (CBO)": 51,
+        "Lack of Cohesion of Methods (LCOM)": 1.3333333333333333,
+        "Fan-in": 12,
+        "Fan-out": 12,
+        "Number of Methods (NOM)": 20
+    },
+    "intermediate_level_metrics": {
+        "Modifiability": 0.023918793071058445,
+        "Testability": 0.06310870273747837,
+        "Reliability": -0.565,
+        "Understandability": 0.5091125,
+        "Self-Descriptiveness": 0.13658928571428572,
+        "Reusability": -0.2749999999999999,
+        "Portability": 0.4588999999999999,
+        "Efficiency": 0
+    }
+}

@@ -1,0 +1,106 @@
+### Code Improvement Suggestions
+
+#### 1. Function Structure
+The `purchase` function is lengthy and complex, exhibiting a high cyclomatic complexity (25). It would benefit from being divided into smaller, more manageable functions that each handle a specific aspect of the purchase process. This encourages single responsibility and improves readability.
+
+**Refactoring Suggestion:**
+- Break down the function into several smaller functions:
+    - `get_customer_info()`: to handle customer interactions.
+    - `validate_product()`: to check if the product is available.
+    - `get_quantity()`: to manage quantity input from the user.
+    - `calculate_total()`: for calculating the total cost.
+    - `apply_discount()`: for processing discounts.
+    - `generate_invoice()`: to handle invoice creation.
+
+#### 2. Exception Handling
+The current exception handling is broadly defined and does not specify the type of exception being caught. This can lead to masking other potential issues.
+
+**Improvement Suggestion:**
+- Instead of using a bare `except`, catch specific exceptions (e.g., `ValueError` when converting user input to an integer).
+
+```python
+try:
+    p_quantity = int(input("How many " + product + " do you want to buy: "))
+except ValueError:
+    print("\t\tError!!!\nPlease enter an integer value!!")
+```
+
+#### 3. Magic Numbers and Strings
+The code contains "magic numbers" like `5000`, `10000`, and hardcoded product names such as "PHONE". These should be replaced with constants for better maintainability and readability.
+
+**Refactoring Suggestion:**
+```python
+MIN_DISCOUNT_AMOUNT_1 = 5000
+MIN_DISCOUNT_AMOUNT_2 = 10000
+BASIC_DISCOUNT_1 = 5.0
+BASIC_DISCOUNT_2 = 10.0
+```
+
+#### 4. Improving User Input Handling
+The existing user input does not provide clear feedback or validation upon incorrect entries, which could confuse users.
+
+**Improvement Suggestion:**
+- Create a loop that continues to prompt the user until valid input is received.
+
+#### 5. Use of Dictionaries
+Instead of checking product availability using a series of `if-elif` statements, consider using a dictionary to map product names to their respective data.
+
+**Example:**
+```python
+products = { 
+    "PHONE": L[0], 
+    "LAPTOP": L[1], 
+    "HDD": L[2] 
+}
+```
+This makes checking product information more concise and easier to extend in the future.
+
+#### 6. Comment Quality
+The comments in the code lack clarity and are not helpful in explaining the logic of the code.
+
+**Improvement Suggestion:**
+- Replace comments with meaningful function and variable names.
+- Provide docstrings for functions to clearly explain their purpose and usage.
+
+#### 7. File Handling
+The file handling could be improved by using a context manager (`with` statement) to automatically handle file closing and prevent potential resource leaks.
+
+**Improvement Suggestion:**
+```python
+with open(invoice + " (" + a_name + ").txt", "w") as file:
+    # write to file
+```
+
+#### 8. Inconsistent Use of Data Structures
+The use of lists to represent products could lead to confusion and errors due to the order of elements. A better representation would be a list of dictionaries.
+
+**Refactoring Suggestion:**
+```python
+products = [
+    {"name": "PHONE", "price": 1000, "quantity": 50},
+    {"name": "LAPTOP", "price": 2000, "quantity": 30},
+    {"name": "HDD", "price": 300, "quantity": 100}
+]
+```
+
+#### 9. Testing and Validation
+The current code lacks modular testing capabilities because it consists of a single monolithic function.
+
+**Improvement Suggestion:**
+- Implement unit tests for the individual functions once the code has been refactored. This will ensure each part works as expected and improve reliability.
+
+#### 10. Use of Enumerations
+For products or categories, consider using Python's built-in `enum` module for better clarity and error prevention.
+
+**Example:**
+```python
+from enum import Enum
+
+class Product(Enum):
+    PHONE = "PHONE"
+    LAPTOP = "LAPTOP"
+    HDD = "HDD"
+```
+
+### Conclusion
+By restructuring the `purchase` function into smaller, dedicated functions, employing clear error handling, improving input handling, and making use of data structures and constants, the code will become much more maintainable, readable, and testable. Each of these improvements addresses specific metrics, such as cyclomatic complexity and maintainability index, which were notably lacking in the original code.
