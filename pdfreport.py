@@ -169,7 +169,7 @@ def generate_pdf_report(code, metrics, analysis, output_file):
 def main():
     # Load code and metrics
     if len(sys.argv) != 2:
-        print("Usage: python pdfreport.py <code_file>")
+        print("Usage: python3 pdfreport.py <code_file>")
         sys.exit(1)
 
     code_file = sys.argv[1]
